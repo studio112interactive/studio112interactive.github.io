@@ -26,22 +26,24 @@
 
     .content {
       padding: 50px 20px;
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
     }
 
     h1 {
-      font-size: 2.2em;
-      margin-bottom: 20px;
+      font-size: 2.4em;
+      margin-bottom: 30px;
       text-align: center;
+      color: #222;
     }
 
-    .version-block {
+    .intro, .version-block {
       background: white;
-      padding: 25px;
-      margin-bottom: 30px;
+      padding: 30px;
+      margin-bottom: 40px;
       border-left: 5px solid #d62828;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+      border-radius: 10px;
     }
 
     .version-block h2 {
@@ -51,7 +53,7 @@
 
     .version-status {
       font-style: italic;
-      color: #555;
+      color: #666;
       margin-bottom: 15px;
     }
 
@@ -63,10 +65,12 @@
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
+      border-radius: 10px;
+      overflow: hidden;
     }
 
     th, td {
-      padding: 10px;
+      padding: 14px;
       text-align: left;
       border-bottom: 1px solid #ddd;
     }
@@ -76,7 +80,7 @@
     }
 
     em {
-      color: #444;
+      color: #555;
     }
   </style>
 </head>
@@ -93,80 +97,84 @@
   <div class="content">
     <h1>Vývoj hry</h1>
 
+    <div class="intro">
+      <p>Hra <strong>Dispatch Simulator: Czechia</strong> se postupně vyvíjí a neustále roste. Na této stránce najdeš přehled jednotlivých milníků, plánovaných funkcí a odhadovaný harmonogram. Cílem je vytvořit realistickou, ale zábavnou simulaci operátora tísňové linky 112 v prostředí České republiky.</p>
+    </div>
+
     <div class="version-block">
-      <h2>Verze 0.0</h2>
-      <p class="version-status">Stav: Vývojová fáze (zatím není ke stažení)</p>
+      <h2>Verze 0.0 – Začátek</h2>
+      <p class="version-status">Stav: Aktivní vývoj</p>
       <ul>
-        <li>Založení projektu a koncept hry</li>
-        <li>Spuštění oficiální webové stránky</li>
-        <li>Příprava jednotlivých sekcí webu</li>
-        <li>Začátek vývoje jádra hry</li>
+        <li>Navržen koncept hry</li>
+        <li>Spuštěna oficiální webová stránka</li>
+        <li>Příprava stylu a struktury webu</li>
+        <li>Základ Unity projektu a plánování prvních funkcí</li>
       </ul>
     </div>
 
     <div class="version-block">
-      <h2>Plán vývoje</h2>
-      <p>Hra se vyvíjí postupně v několika verzích. Každá verze přidává nové funkce a posouvá projekt směrem k prvnímu veřejnému vydání.</p>
+      <h2>Roadmapa vývoje</h2>
+      <p>Tento plán je pouze orientační. Doba vývoje se může měnit podle dostupného času nebo rozšíření týmu.</p>
 
       <table>
         <tr>
           <th>Verze</th>
-          <th>Obsah</th>
-          <th>Odhadovaný čas</th>
+          <th>Co bude přidáno</th>
+          <th>Odhad času</th>
         </tr>
         <tr>
           <td>0.1.0</td>
-          <td>Menu, mapa, první testovací mise</td>
-          <td>1–2 týdny</td>
+          <td>Základní menu, mapa, testovací mise</td>
+          <td>2–3 týdny</td>
         </tr>
         <tr>
           <td>0.2.0</td>
           <td>Stavba stanic, rozpočet, vysílání jednotek</td>
-          <td>2 týdny</td>
+          <td>3–4 týdny</td>
         </tr>
         <tr>
           <td>0.3.0</td>
-          <td>Simulace hovoru s oznamovatelem</td>
-          <td>1–2 týdny</td>
+          <td>Simulace hovoru s oznamovatelem (textově)</td>
+          <td>3 týdny</td>
         </tr>
         <tr>
           <td>0.4.0</td>
-          <td>AI vyhodnocení zásahů</td>
-          <td>2 týdny</td>
+          <td>AI vyhodnocování zásahů, následky špatného rozhodnutí</td>
+          <td>3–4 týdny</td>
         </tr>
         <tr>
           <td>0.5.0</td>
-          <td>Grafické zlepšení, UI</td>
-          <td>1–2 týdny</td>
+          <td>Uživatelské rozhraní, grafické zlepšení</td>
+          <td>2 týdny</td>
         </tr>
         <tr>
           <td>0.6.0</td>
-          <td>Jednotky, personál, přidělování</td>
-          <td>2–3 týdny</td>
+          <td>Jednotky, personál, školení, zkušenosti</td>
+          <td>3–4 týdny</td>
         </tr>
         <tr>
           <td>0.7.0</td>
-          <td>Náhodné mise, regionální odlišnosti</td>
-          <td>2 týdny</td>
+          <td>Regionální odlišnosti, generování misí podle kraje</td>
+          <td>2–3 týdny</td>
         </tr>
         <tr>
           <td>0.8.0</td>
-          <td>Reálná mapa ČR, kraje</td>
-          <td>2 týdny</td>
+          <td>Reálná mapa ČR, detaily krajů</td>
+          <td>2–3 týdny</td>
         </tr>
         <tr>
           <td>0.9.0</td>
-          <td>Ladění, testování, příprava dema</td>
-          <td>1–2 týdny</td>
+          <td>Ladění, bugfixy, příprava na demo</td>
+          <td>2 týdny</td>
         </tr>
         <tr>
           <td>1.0.0</td>
-          <td>První veřejné vydání</td>
+          <td>První veřejné vydání hry</td>
           <td>dle testování</td>
         </tr>
       </table>
 
-      <p><em>Odhad celkového vývoje do verze 1.0.0: 3–4 měsíce, dle času a dostupnosti pomocníků.</em></p>
+      <p><em>Celkový odhad do verze 1.0.0: 5–7 měsíců (při malém týmu a postupném vývoji).</em></p>
     </div>
   </div>
 </body>
