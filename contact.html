@@ -1,72 +1,123 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Kontakt | Dispatch Simulator: Czechia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f3f3f3;
+    :root {
+      --primary: #d62828;
+      --accent: #f77f00;
+      --bg: #f4f4f4;
+      --text: #1a1a1a;
+      --white: #ffffff;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      color: #222;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      min-height: 100vh;
+    }
+
+    aside {
+      background-color: var(--primary);
+      width: 240px;
+      min-height: 100vh;
+      padding: 20px;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .logo {
+      width: 120px;
+      margin-bottom: 30px;
+      filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
     }
 
     nav {
-      background: #d62828;
-      padding: 15px;
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
     }
 
     nav a {
       color: white;
-      margin: 0 15px;
       text-decoration: none;
+      font-size: 1.1em;
       font-weight: bold;
+      padding: 10px 20px;
+      transition: background 0.3s;
+      border-radius: 8px;
     }
 
-    .content {
-      padding: 50px 20px;
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
+    nav a:hover {
+      background-color: var(--accent);
+    }
+
+    main {
+      margin-left: 240px;
+      padding: 60px 40px;
+      flex: 1;
+      max-width: 1100px;
     }
 
     h1 {
-      font-size: 2.4em;
-      color: #222;
-      margin-bottom: 10px;
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+      text-align: center;
     }
 
     p {
-      font-size: 1.1em;
+      font-size: 1.2em;
       color: #444;
-      margin-bottom: 30px;
+      text-align: center;
+      margin-bottom: 40px;
     }
 
     form {
+      background-color: var(--white);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
       display: flex;
       flex-direction: column;
       gap: 20px;
       max-width: 600px;
-      margin: 0 auto 30px;
+      margin: 0 auto 40px;
     }
 
     input, textarea {
       padding: 15px;
       font-size: 1.1em;
       border: 1px solid #ccc;
+      border-radius: 6px;
       width: 100%;
     }
 
     button {
-      background: #d62828;
+      background: var(--primary);
       color: white;
       padding: 14px;
       font-size: 1.1em;
       font-weight: bold;
       border: none;
       cursor: pointer;
+      border-radius: 6px;
+      transition: background 0.3s;
     }
 
     button:hover {
@@ -74,46 +125,67 @@
     }
 
     @media (max-width: 768px) {
-      .content {
-        padding: 30px 15px;
+      aside {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 20px;
+        position: relative;
+      }
+
+      .logo {
+        width: 80px;
+        margin: 0;
+      }
+
+      nav {
+        flex-direction: row;
+        gap: 10px;
+      }
+
+      main {
+        margin-left: 0;
+        padding: 40px 20px;
       }
 
       h1 {
-        font-size: 2em;
+        font-size: 2rem;
       }
 
-      input, textarea {
-        font-size: 1em;
-      }
-
-      button {
-        font-size: 1em;
+      form {
+        padding: 20px;
       }
     }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="index.html">Domů</a>
-    <a href="about.html">O hře</a>
-    <a href="development.html">Vývoj</a>
-    <a href="download.html">Ke stažení</a>
-    <a href="contact.html">Kontakt</a>
-    <a href="links.html">Odkazy</a>
-  </nav>
 
-  <div class="content">
+  <aside>
+    <img src="logo.png-removebg-preview.png" alt="Logo" class="logo" />
+    <nav>
+      <a href="index.html">Domů</a>
+      <a href="about.html">O hře</a>
+      <a href="development.html">Vývoj</a>
+      <a href="download.html">Ke stažení</a>
+      <a href="contact.html">Kontakt</a>
+      <a href="links.html">Odkazy</a>
+    </nav>
+  </aside>
+
+  <main>
     <h1>Kontakt</h1>
     <p>Zde můžeš posílat své návrhy, nabídky na spolupráci a v budoucnu i hlášení chyb ze hry.</p>
 
     <form method="POST" action="https://formspree.io/f/mpwpveoo">
-      <input type="text" name="name" placeholder="Tvé jméno" required>
-      <input type="email" name="email" placeholder="Tvůj e-mail" required>
+      <input type="text" name="name" placeholder="Tvé jméno" required />
+      <input type="email" name="email" placeholder="Tvůj e-mail" required />
       <textarea name="message" rows="6" placeholder="Zpráva / návrh / bug / spolupráce" required></textarea>
       <button type="submit">Odeslat</button>
     </form>
 
     <p>Preferuješ přímý kontakt? Napiš na e-mail: <strong>studio112interactive@outlook.com</strong></p>
-  </div>
+  </main>
+
 </body>
 </html>
