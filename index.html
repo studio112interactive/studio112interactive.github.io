@@ -1,149 +1,161 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Dispatch Simulator: Czechia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     :root {
-      --primary-color: #d62828;
-      --background-color: #f9f9f9;
-      --text-color: #222;
-      --accent-color: #f77f00;
+      --primary: #d62828;
+      --accent: #f77f00;
+      --bg: #f4f4f4;
+      --text: #1a1a1a;
+      --white: #ffffff;
       --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: var(--background-color);
-      color: var(--text-color);
-      line-height: 1.6;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      min-height: 100vh;
+    }
+
+    aside {
+      background-color: var(--primary);
+      width: 240px;
+      min-height: 100vh;
+      padding: 20px;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .logo {
+      width: 120px;
+      margin-bottom: 30px;
+      filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
     }
 
     nav {
-      background-color: var(--primary-color);
-      padding: 20px 10px;
-      text-align: center;
-      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
     }
 
     nav a {
       color: white;
-      margin: 0 20px;
       text-decoration: none;
-      font-weight: bold;
       font-size: 1.1em;
-      transition: color 0.3s ease;
+      font-weight: bold;
+      padding: 10px 20px;
+      transition: background 0.3s;
+      border-radius: 8px;
     }
 
     nav a:hover {
-      color: var(--accent-color);
+      background-color: var(--accent);
     }
 
-    .container {
+    main {
+      margin-left: 240px;
+      padding: 60px 40px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 80px 20px 40px;
-    }
-
-    .logo {
-      max-width: 320px;
-      height: auto;
-      margin-bottom: 40px;
-      filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
     }
 
     h1 {
-      font-size: 3em;
-      color: var(--primary-color);
+      font-size: 3rem;
+      color: var(--primary);
       margin-bottom: 20px;
     }
 
     p {
-      font-size: 1.3em;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 20px;
+      font-size: 1.3rem;
+      max-width: 800px;
+      line-height: 1.8;
       color: #333;
     }
 
     footer {
-      text-align: center;
-      font-size: 0.9em;
-      color: #777;
-      padding: 30px 10px;
       margin-top: 60px;
-      background-color: #fff;
-      border-top: 1px solid #ddd;
-    }
-
-    .decor-left, .decor-right {
-      position: absolute;
-      top: 100px;
-      width: 100px;
-      opacity: 0.08;
-    }
-
-    .decor-left {
-      left: 30px;
-    }
-
-    .decor-right {
-      right: 30px;
+      font-size: 0.9rem;
+      color: #777;
     }
 
     @media (max-width: 768px) {
-      nav a {
-        margin: 0 10px;
-        font-size: 1em;
+      aside {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 20px;
+        position: relative;
       }
 
       .logo {
-        max-width: 220px;
+        width: 80px;
+        margin: 0;
+      }
+
+      nav {
+        flex-direction: row;
+        gap: 10px;
+      }
+
+      main {
+        margin-left: 0;
+        padding: 40px 20px;
       }
 
       h1 {
-        font-size: 2em;
+        font-size: 2rem;
       }
 
       p {
-        font-size: 1.1em;
-      }
-
-      .decor-left, .decor-right {
-        display: none;
+        font-size: 1.1rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a href="index.html">Domů</a>
-    <a href="about.html">O hře</a>
-    <a href="development.html">Vývoj</a>
-    <a href="download.html">Ke stažení</a>
-    <a href="contact.html">Kontakt</a>
-    <a href="links.html">Odkazy</a>
-  </nav>
+  <aside>
+    <img src="logo.png-removebg-preview.png" alt="Logo" class="logo" />
+    <nav>
+      <a href="index.html">Domů</a>
+      <a href="about.html">O hře</a>
+      <a href="development.html">Vývoj</a>
+      <a href="download.html">Ke stažení</a>
+      <a href="contact.html">Kontakt</a>
+      <a href="links.html">Odkazy</a>
+    </nav>
+  </aside>
 
-  <div class="container">
-    <img src="logo.png-removebg-preview.png" alt="Logo Dispatch Simulator: Czechia" class="logo">
-
+  <main>
     <h1>Dispatch Simulator: Czechia</h1>
-
     <p>
-      Realistická simulace dispečera tísňové linky 112. Ve hře převezmeš kontrolu nad složkami IZS v prostředí České republiky – hasiči, záchranáři, policisty a dalšími. Budeš budovat stanice, pořizovat vozidla, řídit personál a čelit reálným krizovým situacím s pomocí AI.
+      Realistická simulace práce dispečera tísňové linky 112. Ve hře se ujmeš řízení všech složek IZS v prostředí České republiky – od hasičů přes záchranku až po policii. Buduj stanice, nakupuj techniku, trénuj personál a reaguj na krizové situace v reálném čase s podporou AI.
     </p>
-  </div>
 
-  <footer>
-    &copy; 2025 Dispatch Simulator: Czechia | studio112interactive@outlook.com
-  </footer>
+    <footer>
+      &copy; 2025 Dispatch Simulator: Czechia | studio112interactive@outlook.com
+    </footer>
+  </main>
 
 </body>
 </html>
