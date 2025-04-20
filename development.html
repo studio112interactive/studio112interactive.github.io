@@ -1,54 +1,98 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Vývoj | Dispatch Simulator: Czechia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f3f3f3;
+    :root {
+      --primary: #d62828;
+      --accent: #f77f00;
+      --bg: #f4f4f4;
+      --text: #1a1a1a;
+      --white: #ffffff;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      min-height: 100vh;
+    }
+
+    aside {
+      background-color: var(--primary);
+      width: 240px;
+      min-height: 100vh;
+      padding: 20px;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .logo {
+      width: 120px;
+      margin-bottom: 30px;
+      filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+    }
+
     nav {
-      background: #d62828;
-      padding: 15px;
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
     }
 
     nav a {
       color: white;
-      margin: 0 15px;
       text-decoration: none;
+      font-size: 1.1em;
       font-weight: bold;
+      padding: 10px 20px;
+      transition: background 0.3s;
+      border-radius: 8px;
     }
 
-    .content {
-      padding: 50px 20px;
-      max-width: 1000px;
-      margin: auto;
+    nav a:hover {
+      background-color: var(--accent);
+    }
+
+    main {
+      margin-left: 240px;
+      padding: 60px 40px;
+      flex: 1;
+      max-width: 1100px;
     }
 
     h1 {
-      font-size: 2.4em;
+      font-size: 2.5rem;
+      color: var(--primary);
       margin-bottom: 30px;
       text-align: center;
-      color: #222;
     }
 
     .intro, .version-block {
-      background: white;
+      background: var(--white);
       padding: 30px;
       margin-bottom: 40px;
-      border-left: 5px solid #d62828;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.07);
-      border-radius: 10px;
+      border-left: 6px solid var(--primary);
+      box-shadow: var(--shadow);
+      border-radius: 12px;
     }
 
     .version-block h2 {
       margin-top: 0;
-      color: #d62828;
+      color: var(--primary);
     }
 
     .version-status {
@@ -59,6 +103,7 @@
 
     ul {
       padding-left: 20px;
+      line-height: 1.7;
     }
 
     table {
@@ -67,6 +112,7 @@
       margin-top: 20px;
       border-radius: 10px;
       overflow: hidden;
+      box-shadow: var(--shadow);
     }
 
     th, td {
@@ -76,25 +122,60 @@
     }
 
     th {
-      background-color: #eee;
+      background-color: #eeeeee;
+      color: #333;
     }
 
     em {
       color: #555;
     }
+
+    @media (max-width: 768px) {
+      aside {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 20px;
+        position: relative;
+      }
+
+      .logo {
+        width: 80px;
+        margin: 0;
+      }
+
+      nav {
+        flex-direction: row;
+        gap: 10px;
+      }
+
+      main {
+        margin-left: 0;
+        padding: 40px 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="index.html">Domů</a>
-    <a href="about.html">O hře</a>
-    <a href="development.html">Vývoj</a>
-    <a href="download.html">Ke stažení</a>
-    <a href="contact.html">Kontakt</a>
-    <a href="links.html">Odkazy</a>
-  </nav>
 
-  <div class="content">
+  <aside>
+    <img src="logo.png-removebg-preview.png" alt="Logo" class="logo" />
+    <nav>
+      <a href="index.html">Domů</a>
+      <a href="about.html">O hře</a>
+      <a href="development.html">Vývoj</a>
+      <a href="download.html">Ke stažení</a>
+      <a href="contact.html">Kontakt</a>
+      <a href="links.html">Odkazy</a>
+    </nav>
+  </aside>
+
+  <main>
     <h1>Vývoj hry</h1>
 
     <div class="intro">
@@ -122,60 +203,21 @@
           <th>Co bude přidáno</th>
           <th>Odhad času</th>
         </tr>
-        <tr>
-          <td>0.1.0</td>
-          <td>Základní menu, mapa, testovací mise</td>
-          <td>2–3 týdny</td>
-        </tr>
-        <tr>
-          <td>0.2.0</td>
-          <td>Stavba stanic, rozpočet, vysílání jednotek</td>
-          <td>3–4 týdny</td>
-        </tr>
-        <tr>
-          <td>0.3.0</td>
-          <td>Simulace hovoru s oznamovatelem (textově)</td>
-          <td>3 týdny</td>
-        </tr>
-        <tr>
-          <td>0.4.0</td>
-          <td>AI vyhodnocování zásahů, následky špatného rozhodnutí</td>
-          <td>3–4 týdny</td>
-        </tr>
-        <tr>
-          <td>0.5.0</td>
-          <td>Uživatelské rozhraní, grafické zlepšení</td>
-          <td>2 týdny</td>
-        </tr>
-        <tr>
-          <td>0.6.0</td>
-          <td>Jednotky, personál, školení, zkušenosti</td>
-          <td>3–4 týdny</td>
-        </tr>
-        <tr>
-          <td>0.7.0</td>
-          <td>Regionální odlišnosti, generování misí podle kraje</td>
-          <td>2–3 týdny</td>
-        </tr>
-        <tr>
-          <td>0.8.0</td>
-          <td>Reálná mapa ČR, detaily krajů</td>
-          <td>2–3 týdny</td>
-        </tr>
-        <tr>
-          <td>0.9.0</td>
-          <td>Ladění, bugfixy, příprava na demo</td>
-          <td>2 týdny</td>
-        </tr>
-        <tr>
-          <td>1.0.0</td>
-          <td>První veřejné vydání hry</td>
-          <td>dle testování</td>
-        </tr>
+        <tr><td>0.1.0</td><td>Základní menu, mapa, testovací mise</td><td>2–3 týdny</td></tr>
+        <tr><td>0.2.0</td><td>Stavba stanic, rozpočet, vysílání jednotek</td><td>3–4 týdny</td></tr>
+        <tr><td>0.3.0</td><td>Simulace hovoru s oznamovatelem (textově)</td><td>3 týdny</td></tr>
+        <tr><td>0.4.0</td><td>AI vyhodnocování zásahů, následky špatného rozhodnutí</td><td>3–4 týdny</td></tr>
+        <tr><td>0.5.0</td><td>Uživatelské rozhraní, grafické zlepšení</td><td>2 týdny</td></tr>
+        <tr><td>0.6.0</td><td>Jednotky, personál, školení, zkušenosti</td><td>3–4 týdny</td></tr>
+        <tr><td>0.7.0</td><td>Regionální odlišnosti, generování misí podle kraje</td><td>2–3 týdny</td></tr>
+        <tr><td>0.8.0</td><td>Reálná mapa ČR, detaily krajů</td><td>2–3 týdny</td></tr>
+        <tr><td>0.9.0</td><td>Ladění, bugfixy, příprava na demo</td><td>2 týdny</td></tr>
+        <tr><td>1.0.0</td><td>První veřejné vydání hry</td><td>dle testování</td></tr>
       </table>
 
       <p><em>Celkový odhad do verze 1.0.0: 5–7 měsíců (při malém týmu a postupném vývoji).</em></p>
     </div>
-  </div>
+  </main>
+
 </body>
 </html>
