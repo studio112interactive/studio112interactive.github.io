@@ -5,17 +5,16 @@
   <title>Vývoj | Dispatch Simulator: Czechia</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
+      background: #f3f3f3;
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f5f5f5;
-      color: #222;
+      padding: 0;
     }
 
     nav {
-      background-color: #d62828;
+      background: #d62828;
       padding: 15px;
       text-align: center;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
     nav a {
@@ -23,74 +22,61 @@
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1.1em;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #ffd166;
     }
 
     .content {
+      padding: 50px 20px;
       max-width: 900px;
-      margin: 50px auto;
-      padding: 40px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      margin: auto;
     }
 
     h1 {
+      font-size: 2.2em;
+      margin-bottom: 20px;
       text-align: center;
-      font-size: 2.5em;
-      color: #d62828;
-      margin-bottom: 30px;
     }
 
     .version-block {
-      background: #fafafa;
+      background: white;
       padding: 25px;
-      border-left: 6px solid #d62828;
-      border-radius: 8px;
       margin-bottom: 30px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      border-left: 5px solid #d62828;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
     .version-block h2 {
       margin-top: 0;
-      font-size: 1.6em;
-      color: #333;
+      color: #d62828;
     }
 
     .version-status {
       font-style: italic;
-      color: #777;
+      color: #555;
       margin-bottom: 15px;
-      display: block;
     }
 
     ul {
       padding-left: 20px;
-      line-height: 1.7;
     }
 
-    li {
-      margin-bottom: 5px;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
     }
 
-    @media (max-width: 768px) {
-      .content {
-        padding: 20px;
-        margin: 20px;
-      }
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
 
-      h1 {
-        font-size: 2em;
-      }
+    th {
+      background-color: #eee;
+    }
 
-      .version-block h2 {
-        font-size: 1.4em;
-      }
+    em {
+      color: #444;
     }
   </style>
 </head>
@@ -105,22 +91,83 @@
   </nav>
 
   <div class="content">
-    <h1>Vývoj</h1>
+    <h1>Vývoj hry</h1>
 
     <div class="version-block">
       <h2>Verze 0.0</h2>
-      <span class="version-status">Stav: Vývojová fáze (zatím není ke stažení)</span>
-      <p><strong>Co je nového:</strong></p>
+      <p class="version-status">Stav: Vývojová fáze (zatím není ke stažení)</p>
       <ul>
-        <li>Zahájení vývoje hry</li>
-        <li>Vytvoření návrhu základních herních mechanik</li>
-        <li>Založení oficiální webové stránky projektu</li>
-        <li>Přidání sekcí: Domů, O hře, Vývoj, Ke stažení, Kontakt, Odkazy</li>
+        <li>Založení projektu a koncept hry</li>
+        <li>Spuštění oficiální webové stránky</li>
+        <li>Příprava jednotlivých sekcí webu</li>
+        <li>Začátek vývoje jádra hry</li>
       </ul>
     </div>
 
-    <!-- Další verze sem později přidáš ve stejném formátu -->
+    <div class="version-block">
+      <h2>Plán vývoje</h2>
+      <p>Hra se vyvíjí postupně v několika verzích. Každá verze přidává nové funkce a posouvá projekt směrem k prvnímu veřejnému vydání.</p>
 
+      <table>
+        <tr>
+          <th>Verze</th>
+          <th>Obsah</th>
+          <th>Odhadovaný čas</th>
+        </tr>
+        <tr>
+          <td>0.1.0</td>
+          <td>Menu, mapa, první testovací mise</td>
+          <td>1–2 týdny</td>
+        </tr>
+        <tr>
+          <td>0.2.0</td>
+          <td>Stavba stanic, rozpočet, vysílání jednotek</td>
+          <td>2 týdny</td>
+        </tr>
+        <tr>
+          <td>0.3.0</td>
+          <td>Simulace hovoru s oznamovatelem</td>
+          <td>1–2 týdny</td>
+        </tr>
+        <tr>
+          <td>0.4.0</td>
+          <td>AI vyhodnocení zásahů</td>
+          <td>2 týdny</td>
+        </tr>
+        <tr>
+          <td>0.5.0</td>
+          <td>Grafické zlepšení, UI</td>
+          <td>1–2 týdny</td>
+        </tr>
+        <tr>
+          <td>0.6.0</td>
+          <td>Jednotky, personál, přidělování</td>
+          <td>2–3 týdny</td>
+        </tr>
+        <tr>
+          <td>0.7.0</td>
+          <td>Náhodné mise, regionální odlišnosti</td>
+          <td>2 týdny</td>
+        </tr>
+        <tr>
+          <td>0.8.0</td>
+          <td>Reálná mapa ČR, kraje</td>
+          <td>2 týdny</td>
+        </tr>
+        <tr>
+          <td>0.9.0</td>
+          <td>Ladění, testování, příprava dema</td>
+          <td>1–2 týdny</td>
+        </tr>
+        <tr>
+          <td>1.0.0</td>
+          <td>První veřejné vydání</td>
+          <td>dle testování</td>
+        </tr>
+      </table>
+
+      <p><em>Odhad celkového vývoje do verze 1.0.0: 3–4 měsíce, dle času a dostupnosti pomocníků.</em></p>
+    </div>
   </div>
 </body>
 </html>
