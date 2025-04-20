@@ -2,32 +2,91 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
-  <title>Domů | Dispatch Simulator: Czechia</title>
+  <title>Dispatch Simulator: Czechia</title>
   <style>
-    body { font-family: Arial; background: #f3f3f3; margin: 0; padding: 0; text-align: center; }
-    nav { background: #d62828; padding: 15px; }
-    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-    .hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 80vh;
-      padding: 20px;
-    }
-    h1 {
-      font-size: 3em;
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f7f7;
       color: #222;
+    }
+
+    nav {
+      background-color: #d62828;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .logo {
+      max-width: 250px;
+      height: auto;
+      margin-bottom: 20px;
+      margin-top: -40px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #d62828;
       margin-bottom: 10px;
     }
-    h2 {
-      font-size: 1.5em;
-      color: #555;
-      font-style: italic;
+
+    p {
+      font-size: 1.2em;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
     }
+
+    .badge {
+      display: inline-block;
+      background: #d62828;
+      color: white;
+      padding: 6px 15px;
+      font-weight: bold;
+      font-size: 1em;
+      border-radius: 25px;
+      margin-bottom: 25px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #888;
+      padding: 20px;
+    }
+
+    /* Místo pro obrázky vozidel v budoucnu */
+    .side-decor {
+      position: fixed;
+      top: 100px;
+      width: 80px;
+      opacity: 0.05;
+    }
+
+    .left-img {
+      left: 0;
+    }
+
+    .right-img {
+      right: 0;
+    }
+
   </style>
 </head>
 <body>
+
   <nav>
     <a href="index.html">Domů</a>
     <a href="about.html">O hře</a>
@@ -36,9 +95,24 @@
     <a href="contact.html">Kontakt</a>
     <a href="links.html">Odkazy</a>
   </nav>
-  <div class="hero">
+
+  <!-- Vlevo / Vpravo můžeš dát třeba PNG aut, jen vlož do složky a přidej správnou cestu -->
+  <!-- <img src="img/firetruck.png" class="side-decor left-img" alt="">
+  <img src="img/ambulance.png" class="side-decor right-img" alt=""> -->
+
+  <div class="container">
+    <img src="ChatGPT Image 20. 4. 2025 15_16_54.png" alt="Logo hry" class="logo">
+    <div class="badge">Coming soon</div>
+
     <h1>Dispatch Simulator: Czechia</h1>
-    <h2>Coming soon</h2>
+    <p>Simulátor operačního střediska 112 v České republice. Jako hlavní dispečer budeš řídit hasiče, záchranku, policii a další jednotky v reálném čase. Stavěj stanice, vyvíjej své týmy a řeš každodenní krizové situace – od drobných nehod po velké katastrofy. Realismus, AI a náhoda se postarají o to, že každá situace bude jiná.</p>
+
+    <p>Projekt je momentálně ve vývoji. Sleduj vývoj a buď mezi prvními, kdo si hru zahraje.</p>
   </div>
+
+  <footer>
+    &copy; 2025 Dispatch Simulator: Czechia | studio112interactive@outlook.com
+  </footer>
+
 </body>
 </html>
