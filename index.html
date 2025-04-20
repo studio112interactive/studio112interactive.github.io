@@ -4,69 +4,118 @@
   <meta charset="UTF-8">
   <title>Dispatch Simulator: Czechia</title>
   <style>
-    body {
+    :root {
+      --primary-color: #d62828;
+      --background-color: #f9f9f9;
+      --text-color: #222;
+      --accent-color: #f77f00;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f2f2f2;
-      color: #222;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.6;
     }
 
     nav {
-      background-color: #d62828;
-      padding: 15px;
+      background-color: var(--primary-color);
+      padding: 20px 10px;
       text-align: center;
+      box-shadow: var(--shadow);
     }
 
     nav a {
       color: white;
-      margin: 0 15px;
+      margin: 0 20px;
       text-decoration: none;
       font-weight: bold;
+      font-size: 1.1em;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent-color);
     }
 
     .container {
       text-align: center;
-      padding: 60px 20px;
+      padding: 80px 20px 40px;
     }
 
     .logo {
-      max-width: 300px;
+      max-width: 320px;
       height: auto;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
+      filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
     }
 
     h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-      color: #d62828;
+      font-size: 3em;
+      color: var(--primary-color);
+      margin-bottom: 20px;
     }
 
     p {
-      font-size: 1.2em;
-      max-width: 800px;
+      font-size: 1.3em;
+      max-width: 900px;
       margin: 0 auto;
-      line-height: 1.6;
+      padding: 0 20px;
+      color: #333;
     }
 
     footer {
       text-align: center;
       font-size: 0.9em;
-      color: #888;
-      padding: 20px;
+      color: #777;
+      padding: 30px 10px;
+      margin-top: 60px;
+      background-color: #fff;
+      border-top: 1px solid #ddd;
     }
 
-    @media (max-width: 600px) {
+    .decor-left, .decor-right {
+      position: absolute;
+      top: 100px;
+      width: 100px;
+      opacity: 0.08;
+    }
+
+    .decor-left {
+      left: 30px;
+    }
+
+    .decor-right {
+      right: 30px;
+    }
+
+    @media (max-width: 768px) {
+      nav a {
+        margin: 0 10px;
+        font-size: 1em;
+      }
+
       .logo {
-        max-width: 200px;
+        max-width: 220px;
       }
 
       h1 {
-        font-size: 1.8em;
+        font-size: 2em;
       }
 
       p {
-        font-size: 1em;
-        padding: 0 10px;
+        font-size: 1.1em;
+      }
+
+      .decor-left, .decor-right {
+        display: none;
       }
     }
   </style>
@@ -88,9 +137,7 @@
     <h1>Dispatch Simulator: Czechia</h1>
 
     <p>
-      Dispatch Simulator: Czechia bude realistická simulace dispečera linky 112. Hráč bude řídit hasiče, záchrannou službu,
-      policii a další složky IZS v prostředí České republiky. Budeš budovat stanice, nakupovat techniku, najímat a školit personál
-      a řešit rozmanité události v reálném čase. Hra bude klást důraz na správné rozhodování, AI simulaci a realistickou komunikaci s oznamovateli.
+      Realistická simulace dispečera tísňové linky 112. Ve hře převezmeš kontrolu nad složkami IZS v prostředí České republiky – hasiči, záchranáři, policisty a dalšími. Budeš budovat stanice, pořizovat vozidla, řídit personál a čelit reálným krizovým situacím s pomocí AI.
     </p>
   </div>
 
