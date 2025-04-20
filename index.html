@@ -7,7 +7,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f7f7f7;
+      background-color: #f2f2f2;
       color: #222;
     }
 
@@ -30,34 +30,22 @@
     }
 
     .logo {
-      max-width: 250px;
+      max-width: 300px;
       height: auto;
-      margin-bottom: 20px;
-      margin-top: -40px;
+      margin-bottom: 30px;
     }
 
     h1 {
       font-size: 2.5em;
-      color: #d62828;
       margin-bottom: 10px;
+      color: #d62828;
     }
 
     p {
       font-size: 1.2em;
       max-width: 800px;
-      margin: 0 auto 30px;
+      margin: 0 auto;
       line-height: 1.6;
-    }
-
-    .badge {
-      display: inline-block;
-      background: #d62828;
-      color: white;
-      padding: 6px 15px;
-      font-weight: bold;
-      font-size: 1em;
-      border-radius: 25px;
-      margin-bottom: 25px;
     }
 
     footer {
@@ -67,22 +55,20 @@
       padding: 20px;
     }
 
-    /* Místo pro obrázky vozidel v budoucnu */
-    .side-decor {
-      position: fixed;
-      top: 100px;
-      width: 80px;
-      opacity: 0.05;
-    }
+    @media (max-width: 600px) {
+      .logo {
+        max-width: 200px;
+      }
 
-    .left-img {
-      left: 0;
-    }
+      h1 {
+        font-size: 1.8em;
+      }
 
-    .right-img {
-      right: 0;
+      p {
+        font-size: 1em;
+        padding: 0 10px;
+      }
     }
-
   </style>
 </head>
 <body>
@@ -96,18 +82,16 @@
     <a href="links.html">Odkazy</a>
   </nav>
 
-  <!-- Vlevo / Vpravo můžeš dát třeba PNG aut, jen vlož do složky a přidej správnou cestu -->
-  <!-- <img src="img/firetruck.png" class="side-decor left-img" alt="">
-  <img src="img/ambulance.png" class="side-decor right-img" alt=""> -->
-
   <div class="container">
-    <img src="ChatGPT Image 20. 4. 2025 15_16_54.png" alt="Logo hry" class="logo">
-    <div class="badge">Coming soon</div>
+    <img src="logo.png" alt="Logo Dispatch Simulator: Czechia" class="logo">
 
     <h1>Dispatch Simulator: Czechia</h1>
-    <p>Simulátor operačního střediska 112 v České republice. Jako hlavní dispečer budeš řídit hasiče, záchranku, policii a další jednotky v reálném čase. Stavěj stanice, vyvíjej své týmy a řeš každodenní krizové situace – od drobných nehod po velké katastrofy. Realismus, AI a náhoda se postarají o to, že každá situace bude jiná.</p>
 
-    <p>Projekt je momentálně ve vývoji. Sleduj vývoj a buď mezi prvními, kdo si hru zahraje.</p>
+    <p>
+      Dispatch Simulator: Czechia bude realistická simulace dispečera linky 112. Hráč bude řídit hasiče, záchrannou službu,
+      policii a další složky IZS v prostředí České republiky. Budeš budovat stanice, nakupovat techniku, najímat a školit personál
+      a řešit rozmanité události v reálném čase. Hra bude klást důraz na správné rozhodování, AI simulaci a realistickou komunikaci s oznamovateli.
+    </p>
   </div>
 
   <footer>
