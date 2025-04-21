@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dispatch Simulator: Czechia</title>
   <style>
@@ -26,20 +26,23 @@
       color: var(--text);
       display: flex;
       min-height: 100vh;
+      position: relative;
     }
 
-    /* Sidebar */
+    /* Sidebar (menu) */
     aside {
       background-color: var(--primary);
       width: 240px;
       min-height: 100vh;
       padding: 20px;
       position: fixed;
+      top: 0;
+      left: -240px; /* Initially hidden */
       display: flex;
       flex-direction: column;
       align-items: center;
       box-shadow: var(--shadow);
-      transition: transform 0.3s ease;
+      transition: left 0.3s ease; /* Smooth animation */
     }
 
     .logo {
@@ -103,10 +106,9 @@
     /* Mobile menu */
     @media (max-width: 768px) {
       aside {
+        width: 100%;
+        height: auto;
         left: -240px; /* Initially hidden */
-        position: fixed;
-        top: 0;
-        z-index: 10;
       }
 
       .logo {
@@ -117,6 +119,7 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
+        padding-top: 20px;
       }
 
       nav a {
@@ -153,8 +156,9 @@
         z-index: 20;
       }
 
+      /* Menu visibility */
       aside.active {
-        left: 0; /* Slide in */
+        left: 0; /* Slide in the menu */
       }
 
       nav.active {
@@ -164,6 +168,23 @@
       /* Initially hide navigation on mobile */
       nav {
         display: none;
+      }
+    }
+
+    /* Desktop menu transition */
+    @media (min-width: 769px) {
+      .menu-toggle {
+        display: none; /* Hide hamburger icon on desktop */
+      }
+
+      aside {
+        left: 0;
+      }
+
+      nav {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
       }
     }
   </style>
