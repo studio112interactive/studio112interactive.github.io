@@ -26,18 +26,23 @@
       color: var(--text);
       display: flex;
       min-height: 100vh;
+      position: relative;
     }
 
+    /* Sidebar (menu) */
     aside {
       background-color: var(--primary);
       width: 240px;
       min-height: 100vh;
       padding: 20px;
       position: fixed;
+      top: 0;
+      left: -240px; /* Initially hidden */
       display: flex;
       flex-direction: column;
       align-items: center;
       box-shadow: var(--shadow);
+      transition: left 0.3s ease; /* Smooth animation */
     }
 
     .logo {
@@ -67,11 +72,16 @@
       background-color: var(--accent);
     }
 
+    /* Main content */
     main {
       margin-left: 240px;
       padding: 60px 40px;
       flex: 1;
-      max-width: 1100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
 
     h1 {
@@ -109,12 +119,8 @@
     /* Mobile menu */
     @media (max-width: 768px) {
       aside {
-        width: 100%;
-        height: auto;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 10px 20px;
-        position: relative;
+        width: 240px; /* Ensure width on mobile */
+        left: -240px; /* Initially hidden off screen */
       }
 
       .logo {
@@ -122,8 +128,15 @@
       }
 
       nav {
-        flex-direction: row;
+        display: flex;
+        flex-direction: column;
         gap: 10px;
+        padding-top: 20px;
+      }
+
+      nav a {
+        font-size: 1.2em;
+        padding: 10px;
       }
 
       main {
@@ -134,11 +147,64 @@
       h1 {
         font-size: 2rem;
       }
+
+      p {
+        font-size: 1.1rem;
+      }
+
+      /* Hamburger icon */
+      .menu-toggle {
+        display: block;
+        background-color: var(--primary);
+        color: white;
+        font-size: 2rem;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        border-radius: 50%;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 20;
+      }
+
+      /* Menu visibility */
+      aside.active {
+        left: 0; /* Slide in the menu */
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      /* Initially hide navigation on mobile */
+      nav {
+        display: none;
+      }
+    }
+
+    /* Desktop menu transition */
+    @media (min-width: 769px) {
+      .menu-toggle {
+        display: none; /* Hide hamburger icon on desktop */
+      }
+
+      aside {
+        left: 0;
+      }
+
+      nav {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- Hamburger icon for mobile -->
+  <button class="menu-toggle">&#9776;</button>
   <aside>
     <img src="logo.png" alt="Logo" class="logo" />
     <nav>
