@@ -2,8 +2,8 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8" />
-  <title>O hře | Dispatch Simulator: Czechia</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>O hře | Dispatch Simulator: Czechia</title>
   <style>
     :root {
       --primary: #d62828;
@@ -15,9 +15,9 @@
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
@@ -26,18 +26,23 @@
       color: var(--text);
       display: flex;
       min-height: 100vh;
+      position: relative;
     }
 
+    /* Sidebar (menu) */
     aside {
       background-color: var(--primary);
       width: 240px;
       min-height: 100vh;
       padding: 20px;
       position: fixed;
+      top: 0;
+      left: -240px; /* Initially hidden */
       display: flex;
       flex-direction: column;
       align-items: center;
       box-shadow: var(--shadow);
+      transition: left 0.3s ease;
     }
 
     .logo {
@@ -67,6 +72,7 @@
       background-color: var(--accent);
     }
 
+    /* Main content */
     main {
       margin-left: 240px;
       padding: 60px 40px;
@@ -99,23 +105,20 @@
       color: #555;
     }
 
+    /* Mobile menu */
     @media (max-width: 768px) {
       aside {
         width: 100%;
         height: auto;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 10px 20px;
-        position: relative;
+        left: -240px; /* Initially hidden */
       }
 
       .logo {
         width: 80px;
-        margin: 0;
       }
 
       nav {
-        flex-direction: row;
+        flex-direction: column;
         gap: 10px;
       }
 
@@ -125,16 +128,67 @@
       }
 
       h1 {
-        font-size: 2em;
+        font-size: 2rem;
       }
 
       p {
         font-size: 1em;
       }
+
+      /* Hamburger icon */
+      .menu-toggle {
+        display: block;
+        background-color: var(--primary);
+        color: white;
+        font-size: 2rem;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        border-radius: 50%;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 20;
+      }
+
+      /* Menu visibility */
+      aside.active {
+        left: 0; /* Slide in the menu */
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      /* Initially hide navigation on mobile */
+      nav {
+        display: none;
+      }
+    }
+
+    /* Desktop menu transition */
+    @media (min-width: 769px) {
+      .menu-toggle {
+        display: none; /* Hide hamburger icon on desktop */
+      }
+
+      aside {
+        left: 0;
+      }
+
+      nav {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
     }
   </style>
 </head>
 <body>
+
+  <!-- Hamburger icon for mobile -->
+  <button class="menu-toggle">&#9776;</button>
+
   <aside>
     <img src="logo.png" alt="Logo" class="logo" />
     <nav>
@@ -165,5 +219,18 @@
       <p><em>Více informací přineseme postupně v dalších fázích vývoje. Sledujte sekci Vývoj pro aktuální novinky!</em></p>
     </div>
   </main>
+
+  <script>
+    // Toggle mobile menu visibility
+    const menuToggle = document.querySelector('.menu-toggle');
+    const aside = document.querySelector('aside');
+    const nav = document.querySelector('nav');
+
+    menuToggle.addEventListener('click', () => {
+      aside.classList.toggle('active');
+      nav.classList.toggle('active');
+    });
+  </script>
+
 </body>
 </html>
