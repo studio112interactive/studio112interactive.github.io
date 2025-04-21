@@ -29,7 +29,6 @@
       position: relative;
     }
 
-    /* Sidebar (menu) */
     aside {
       background-color: var(--primary);
       width: 240px;
@@ -37,12 +36,12 @@
       padding: 20px;
       position: fixed;
       top: 0;
-      left: -240px; /* Initially hidden */
+      left: -240px;
       display: flex;
       flex-direction: column;
       align-items: center;
       box-shadow: var(--shadow);
-      transition: left 0.3s ease; /* Smooth animation */
+      transition: left 0.3s ease;
     }
 
     .logo {
@@ -72,7 +71,6 @@
       background-color: var(--accent);
     }
 
-    /* Main content */
     main {
       margin-left: 240px;
       padding: 60px 40px;
@@ -96,18 +94,35 @@
       line-height: 1.8;
       color: #333;
     }
-    
-        footer {
+
+    .discord-link {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 28px;
+      background-color: var(--primary);
+      color: white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: var(--shadow);
+      transition: background-color 0.3s ease;
+    }
+
+    .discord-link:hover {
+      background-color: var(--accent);
+    }
+
+    footer {
       margin-top: 60px;
       font-size: 0.9rem;
       color: #777;
     }
 
-    /* Mobile menu */
     @media (max-width: 768px) {
       aside {
-        width: 240px; /* Ensure width on mobile */
-        left: -240px; /* Initially hidden off screen */
+        width: 240px;
+        left: -240px;
       }
 
       .logo {
@@ -130,7 +145,7 @@
         margin-left: 0;
         padding: 40px 20px;
       }
-      
+
       h1 {
         font-size: 2rem;
       }
@@ -139,7 +154,6 @@
         font-size: 1.1rem;
       }
 
-      /* Hamburger icon */
       .menu-toggle {
         display: block;
         background-color: var(--primary);
@@ -155,25 +169,22 @@
         z-index: 20;
       }
 
-      /* Menu visibility */
       aside.active {
-        left: 0; /* Slide in the menu */
+        left: 0;
       }
 
       nav.active {
         display: flex;
       }
 
-      /* Initially hide navigation on mobile */
       nav {
         display: none;
       }
     }
 
-    /* Desktop menu transition */
     @media (min-width: 769px) {
       .menu-toggle {
-        display: none; /* Hide hamburger icon on desktop */
+        display: none;
       }
 
       aside {
@@ -208,11 +219,15 @@
 
   <main>
     <h1>Odkazy</h1>
-    <p><strong>Coming soon!</strong> Již brzy zde najdeš odkazy na komunitu, oficiální profily, stránky ke stažení nebo užitečné externí zdroje.</p>
+    <p>
+      Připoj se k naší oficiální komunitě na Discordu! Získej nejnovější informace, podílej se na vývoji, nebo si jen pokecáme.
+    </p>
+    <a href="https://discord.gg/qpUSP4pU" class="discord-link" target="_blank">
+      👉 Připojit se na Discord
+    </a>
   </main>
 
   <script>
-    // Toggle mobile menu visibility
     const menuToggle = document.querySelector('.menu-toggle');
     const aside = document.querySelector('aside');
     const nav = document.querySelector('nav');
