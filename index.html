@@ -39,14 +39,9 @@
       flex-direction: column;
       align-items: center;
       box-shadow: var(--shadow);
-      transition: transform 0.3s ease;
     }
 
-    /* Mobile menu toggle */
-    .menu-toggle {
-      display: none;
-    }
-
+    /* Logo */
     .logo {
       width: 120px;
       margin-bottom: 30px;
@@ -110,12 +105,11 @@
       aside {
         width: 100%;
         height: auto;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 10px 20px;
+        flex-direction: column;
         position: fixed;
         top: 0;
         left: -240px;
+        transition: transform 0.3s ease;
       }
 
       .logo {
@@ -124,7 +118,7 @@
       }
 
       nav {
-        display: none;
+        display: flex;
         flex-direction: column;
         gap: 10px;
       }
@@ -147,7 +141,7 @@
         font-size: 1.1rem;
       }
 
-      /* Toggle button for mobile */
+      /* Hamburger icon for mobile */
       .menu-toggle {
         display: block;
         background-color: var(--primary);
@@ -162,13 +156,18 @@
         left: 20px;
       }
 
-      .menu-toggle.active + nav {
-        display: flex;
+      aside.active {
+        transform: translateX(240px);
       }
 
-      aside.active {
-        left: 0;
+      nav.active {
+        display: flex;
       }
+    }
+
+    /* Hide navigation on mobile initially */
+    nav {
+      display: none;
     }
   </style>
 </head>
@@ -204,10 +203,11 @@
     // Toggle mobile menu
     const menuToggle = document.querySelector('.menu-toggle');
     const aside = document.querySelector('aside');
+    const nav = document.querySelector('nav');
 
     menuToggle.addEventListener('click', () => {
       aside.classList.toggle('active');
-      menuToggle.classList.toggle('active');
+      nav.classList.toggle('active');
     });
   </script>
 </body>
