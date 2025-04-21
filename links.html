@@ -26,6 +26,7 @@
       color: var(--text);
       display: flex;
       min-height: 100vh;
+      position: relative;
     }
 
     /* Sidebar (menu) */
@@ -35,12 +36,12 @@
       min-height: 100vh;
       padding: 20px;
       position: fixed;
+      top: 0;
+      left: -240px; /* Initially hidden */
       display: flex;
       flex-direction: column;
       align-items: center;
       box-shadow: var(--shadow);
-      top: 0;
-      left: -240px; /* Initially hidden */
       transition: left 0.3s ease; /* Smooth animation */
     }
 
@@ -76,45 +77,60 @@
       margin-left: 240px;
       padding: 60px 40px;
       flex: 1;
-      max-width: 1000px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       color: var(--primary);
       margin-bottom: 20px;
-      text-align: center;
     }
 
     p {
-      font-size: 1.3em;
-      color: #444;
-      text-align: center;
+      font-size: 1.3rem;
+      max-width: 800px;
+      line-height: 1.8;
+      color: #333;
+    }
+    
+        footer {
+      margin-top: 60px;
+      font-size: 0.9rem;
+      color: #777;
     }
 
     /* Mobile menu */
     @media (max-width: 768px) {
       aside {
-        width: 100%;
-        height: auto;
-        left: -240px; /* Initially hidden */
+        width: 240px; /* Ensure width on mobile */
+        left: -240px; /* Initially hidden off screen */
       }
 
       .logo {
         width: 80px;
-        margin: 0;
       }
 
       nav {
+        display: flex;
         flex-direction: column;
         gap: 10px;
+        padding-top: 20px;
+      }
+
+      nav a {
+        font-size: 1.2em;
+        padding: 10px;
       }
 
       main {
         margin-left: 0;
         padding: 40px 20px;
       }
-
+      
       h1 {
         font-size: 2rem;
       }
