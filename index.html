@@ -28,6 +28,7 @@
       min-height: 100vh;
     }
 
+    /* Sidebar for larger screens */
     aside {
       background-color: var(--primary);
       width: 240px;
@@ -38,6 +39,12 @@
       flex-direction: column;
       align-items: center;
       box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+
+    /* Mobile menu toggle */
+    .menu-toggle {
+      display: none;
     }
 
     .logo {
@@ -67,6 +74,7 @@
       background-color: var(--accent);
     }
 
+    /* Main content */
     main {
       margin-left: 240px;
       padding: 60px 40px;
@@ -97,6 +105,7 @@
       color: #777;
     }
 
+    /* Mobile menu */
     @media (max-width: 768px) {
       aside {
         width: 100%;
@@ -105,6 +114,7 @@
         justify-content: space-between;
         padding: 10px 20px;
         position: relative;
+        transform: translateX(-100%);
       }
 
       .logo {
@@ -113,8 +123,14 @@
       }
 
       nav {
-        flex-direction: row;
+        display: none;
+        flex-direction: column;
         gap: 10px;
+      }
+
+      nav a {
+        font-size: 1.2em;
+        padding: 10px;
       }
 
       main {
@@ -129,10 +145,33 @@
       p {
         font-size: 1.1rem;
       }
+
+      /* Toggle button for mobile */
+      .menu-toggle {
+        display: block;
+        background-color: var(--primary);
+        color: white;
+        font-size: 2rem;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        border-radius: 50%;
+      }
+
+      .menu-toggle.active + nav {
+        display: flex;
+      }
+
+      aside.active {
+        transform: translateX(0);
+      }
     }
   </style>
 </head>
 <body>
+
+  <!-- Hamburger icon for mobile -->
+  <button class="menu-toggle">&#9776;</button>
 
   <aside>
     <img src="logo.png" alt="Logo" class="logo" />
@@ -157,5 +196,15 @@
     </footer>
   </main>
 
+  <script>
+    // Toggle mobile menu
+    const menuToggle = document.querySelector('.menu-toggle');
+    const aside = document.querySelector('aside');
+
+    menuToggle.addEventListener('click', () => {
+      aside.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
