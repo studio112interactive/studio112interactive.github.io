@@ -12,6 +12,8 @@
       --text: #1a1a1a;
       --white: #ffffff;
       --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      --border-radius: 12px;
+      --transition-time: 0.3s;
     }
 
     * {
@@ -26,7 +28,7 @@
       color: var(--text);
       display: flex;
       min-height: 100vh;
-      position: relative;
+      font-size: 1rem;
     }
 
     /* Sidebar (menu) */
@@ -42,13 +44,14 @@
       flex-direction: column;
       align-items: center;
       box-shadow: var(--shadow);
-      transition: left 0.3s ease; /* Smooth animation */
+      transition: left var(--transition-time);
     }
 
     .logo {
       width: 120px;
       margin-bottom: 30px;
       filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+      transition: width var(--transition-time);
     }
 
     nav {
@@ -63,9 +66,11 @@
       text-decoration: none;
       font-size: 1.1em;
       font-weight: bold;
-      padding: 10px 20px;
-      transition: background 0.3s;
-      border-radius: 8px;
+      padding: 12px 20px;
+      border-radius: var(--border-radius);
+      transition: background-color var(--transition-time);
+      text-align: center;
+      width: 100%;
     }
 
     nav a:hover {
@@ -82,12 +87,14 @@
       align-items: center;
       justify-content: center;
       text-align: center;
+      transition: margin-left var(--transition-time);
     }
 
     h1 {
       font-size: 3rem;
       color: var(--primary);
       margin-bottom: 20px;
+      transition: font-size var(--transition-time);
     }
 
     p {
@@ -95,6 +102,7 @@
       max-width: 800px;
       line-height: 1.8;
       color: #333;
+      transition: font-size var(--transition-time);
     }
 
     footer {
@@ -106,9 +114,12 @@
     /* Mobile menu */
     @media (max-width: 768px) {
       aside {
-        width: 100%;
-        height: auto;
         left: -240px; /* Initially hidden */
+        position: fixed;
+        top: 0;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
       }
 
       .logo {
@@ -119,7 +130,6 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
-        padding-top: 20px;
       }
 
       nav a {
@@ -158,7 +168,7 @@
 
       /* Menu visibility */
       aside.active {
-        left: 0; /* Slide in the menu */
+        left: 0;
       }
 
       nav.active {
