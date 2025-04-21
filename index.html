@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dispatch Simulator: Czechia</title>
   <style>
     :root {
@@ -15,9 +15,9 @@
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
@@ -28,7 +28,7 @@
       min-height: 100vh;
     }
 
-    /* Sidebar (menu) for larger screens */
+    /* Sidebar */
     aside {
       background-color: var(--primary);
       width: 240px;
@@ -103,25 +103,20 @@
     /* Mobile menu */
     @media (max-width: 768px) {
       aside {
-        width: 100%;
-        height: auto;
+        left: -240px; /* Initially hidden */
         position: fixed;
         top: 0;
-        left: -240px;  /* Initially hidden on mobile */
-        padding: 20px;
         z-index: 10;
       }
 
       .logo {
         width: 80px;
-        margin: 0;
       }
 
       nav {
         display: flex;
         flex-direction: column;
         gap: 10px;
-        padding-top: 20px;
       }
 
       nav a {
@@ -158,19 +153,18 @@
         z-index: 20;
       }
 
-      /* Menu visibility */
       aside.active {
-        left: 0;  /* Menu slides in */
+        left: 0; /* Slide in */
       }
 
       nav.active {
         display: flex;
       }
-    }
 
-    /* Initially hide navigation on mobile */
-    nav {
-      display: none;
+      /* Initially hide navigation on mobile */
+      nav {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -213,5 +207,6 @@
       nav.classList.toggle('active');
     });
   </script>
+
 </body>
 </html>
