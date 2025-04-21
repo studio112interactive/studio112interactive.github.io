@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vývoj | Dispatch Simulator: Czechia</title>
+  <title>Spolupráce | Dispatch Simulator: Czechia</title>
   <style>
     :root {
       --primary: #d62828;
@@ -28,20 +28,16 @@
       min-height: 100vh;
     }
 
-    /* Sidebar (menu) */
     aside {
       background-color: var(--primary);
       width: 240px;
       min-height: 100vh;
-      padding: 30px 20px;
+      padding: 20px;
       position: fixed;
-      top: 0;
-      left: -240px; /* Initially hidden */
       display: flex;
       flex-direction: column;
       align-items: center;
       box-shadow: var(--shadow);
-      transition: left 0.3s ease; /* Smooth animation */
     }
 
     .logo {
@@ -62,7 +58,7 @@
       text-decoration: none;
       font-size: 1.1em;
       font-weight: bold;
-      padding: 12px 25px;
+      padding: 10px 20px;
       transition: background 0.3s;
       border-radius: 8px;
     }
@@ -71,78 +67,43 @@
       background-color: var(--accent);
     }
 
-    /* Main content */
     main {
       margin-left: 240px;
       padding: 60px 40px;
       flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      text-align: center;
+      max-width: 1100px;
     }
 
     h1 {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       color: var(--primary);
       margin-bottom: 30px;
-      font-weight: bold;
+      text-align: center;
     }
 
-    .intro, .version-block {
+    .content {
       background: var(--white);
       padding: 40px;
       margin-bottom: 40px;
-      border-left: 6px solid var(--primary);
-      box-shadow: var(--shadow);
       border-radius: 12px;
-      max-width: 900px;
-      width: 100%;
+      box-shadow: var(--shadow);
     }
 
-    .version-block h2 {
-      margin-top: 0;
-      color: var(--primary);
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-    }
-
-    .version-status {
-      font-style: italic;
-      color: #666;
-      margin-bottom: 15px;
-    }
-
-    ul {
-      padding-left: 20px;
-      line-height: 1.7;
+    p {
       font-size: 1.2em;
       color: #444;
+      margin-bottom: 20px;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-      border-radius: 10px;
-      overflow: hidden;
+    .highlight {
+      display: inline-block;
+      padding: 15px 25px;
+      background-color: #ffd166;
+      color: #222;
+      font-weight: bold;
+      border-left: 5px solid var(--primary);
       box-shadow: var(--shadow);
-    }
-
-    th, td {
-      padding: 14px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-    }
-
-    th {
-      background-color: #eeeeee;
-      color: #333;
-    }
-
-    em {
-      color: #555;
+      border-radius: 8px;
     }
 
     /* Mobile menu */
@@ -150,7 +111,10 @@
       aside {
         width: 100%;
         height: auto;
-        left: -240px; /* Initially hidden */
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 20px;
+        position: relative;
       }
 
       .logo {
@@ -160,12 +124,6 @@
       nav {
         flex-direction: row;
         gap: 10px;
-        padding-top: 20px;
-      }
-      
-      nav a {
-        font-size: 1.2em;
-        padding: 10px 20px;
       }
 
       main {
@@ -176,64 +134,10 @@
       h1 {
         font-size: 2rem;
       }
-      
-      p {
-        font-size: 1.1rem;
-      }
-
-      /* Hamburger icon */
-      .menu-toggle {
-        display: block;
-        background-color: var(--primary);
-        color: white;
-        font-size: 2rem;
-        padding: 10px;
-        border: none;
-        cursor: pointer;
-        border-radius: 50%;
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        z-index: 20;
-      }
-
-      /* Menu visibility */
-      aside.active {
-        left: 0; /* Slide in the menu */
-      }
-
-      nav.active {
-        display: flex;
-      }
-
-      /* Initially hide navigation on mobile */
-      nav {
-        display: none;
-      }
-    }
-
-    /* Desktop menu */
-    @media (min-width: 769px) {
-      .menu-toggle {
-        display: none; /* Hide hamburger icon on desktop */
-      }
-
-      aside {
-        left: 0;
-      }
-
-      nav {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-      }
     }
   </style>
 </head>
 <body>
-
-  <!-- Hamburger icon for mobile -->
-  <button class="menu-toggle">&#9776;</button>
 
   <aside>
     <img src="logo.png" alt="Logo" class="logo" />
@@ -244,51 +148,21 @@
       <a href="download.html">Ke stažení</a>
       <a href="contact.html">Kontakt</a>
       <a href="links.html">Odkazy</a>
-      <a href="spoluprace.html">Spolupráce</a>
     </nav>
   </aside>
 
   <main>
-    <h1>Vývoj hry</h1>
+    <h1>Spolupráce</h1>
 
-    <div class="intro">
-      <p>Hra <strong>Dispatch Simulator: Czechia</strong> se postupně vyvíjí a neustále roste. Na této stránce najdeš přehled jednotlivých milníků, plánovaných funkcí a odhadovaný harmonogram. Cílem je vytvořit realistickou, ale zábavnou simulaci operátora tísňové linky 112 v prostředí České republiky.</p>
-    </div>
+    <div class="content">
+      <p>Chceš se zapojit do vývoje hry <strong>Dispatch Simulator: Czechia</strong> nebo nám pomoci s grafikou, testováním či marketingem? Napiš nám a staň se součástí našeho týmu!</p>
 
-    <div class="version-block">
-      <h2>Verze 0.0 – Začátek</h2>
-      <p class="version-status">Stav: Vývojová verze (Nelze stáhnout)</p>
-      <ul>
-        <li>Navržen koncept hry</li>
-        <li>Spuštěna oficiální webová stránka</li>
-        <li>Příprava stylu a struktury webu</li>
-        <li>Základ Unity projektu a plánování prvních funkcí</li>
-      </ul>
-    </div>
+      <p>Pro přihlášení se do týmu vyplň následující formulář, kde nám napíšeš, jak bys mohl/a přispět do projektu.</p>
 
-    <div class="version-block">
-      <h2>Roadmapa vývoje</h2>
-      <p>Tento plán je pouze orientační. Doba vývoje se může měnit podle dostupného času nebo rozšíření týmu.</p>
+      <!-- Google Form Embed (nahraď kódem formuláře, který získáš z Google Forms) -->
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfD5yZC2yb3fGJ6elTwr9A0zjm9VJHvXtFwXZYcmh2ncs4EJw/viewform?embedded=true" width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">Načítám...</iframe>
 
-      <table>
-        <tr>
-          <th>Verze</th>
-          <th>Co bude přidáno</th>
-          <th>Odhad času</th>
-        </tr>
-        <tr><td>0.1.0</td><td>Základní menu, mapa, testovací mise</td><td>2–3 týdny</td></tr>
-        <tr><td>0.2.0</td><td>Stavba stanic, rozpočet, vysílání jednotek</td><td>3–4 týdny</td></tr>
-        <tr><td>0.3.0</td><td>Simulace hovoru s oznamovatelem (textově)</td><td>3 týdny</td></tr>
-        <tr><td>0.4.0</td><td>AI vyhodnocování zásahů, následky špatného rozhodnutí</td><td>3–4 týdny</td></tr>
-        <tr><td>0.5.0</td><td>Uživatelské rozhraní, grafické zlepšení</td><td>2 týdny</td></tr>
-        <tr><td>0.6.0</td><td>Jednotky, personál, školení, zkušenosti</td><td>3–4 týdny</td></tr>
-        <tr><td>0.7.0</td><td>Regionální odlišnosti, generování misí podle kraje</td><td>2–3 týdny</td></tr>
-        <tr><td>0.8.0</td><td>Reálná mapa ČR, detaily krajů</td><td>2–3 týdny</td></tr>
-        <tr><td>0.9.0</td><td>Ladění, bugfixy, příprava na demo</td><td>2 týdny</td></tr>
-        <tr><td>1.0.0</td><td>První veřejné vydání hry</td><td>dle testování</td></tr>
-      </table>
-
-      <p><em>Celkový odhad do verze 1.0.0: 5–7 měsíců (při malém týmu a postupném vývoji).</em></p>
+      <p class="highlight">Děkujeme za Tvůj zájem! Budeme Tě kontaktovat co nejdříve.</p>
     </div>
   </main>
 
