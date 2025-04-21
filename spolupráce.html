@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spolupráce | Dispatch Simulator: Czechia</title>
+  <style>
+    :root {
+      --primary: #d62828;
+      --accent: #f77f00;
+      --bg: #f4f4f4;
+      --text: #1a1a1a;
+      --white: #ffffff;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      min-height: 100vh;
+    }
+
+    aside {
+      background-color: var(--primary);
+      width: 240px;
+      min-height: 100vh;
+      padding: 20px;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .logo {
+      width: 120px;
+      margin-bottom: 30px;
+      filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1em;
+      font-weight: bold;
+      padding: 10px 20px;
+      transition: background 0.3s;
+      border-radius: 8px;
+    }
+
+    nav a:hover {
+      background-color: var(--accent);
+    }
+
+    main {
+      margin-left: 240px;
+      padding: 60px 40px;
+      flex: 1;
+      max-width: 1100px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .content {
+      background: var(--white);
+      padding: 40px;
+      margin-bottom: 40px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    .highlight {
+      display: inline-block;
+      padding: 15px 25px;
+      background-color: #ffd166;
+      color: #222;
+      font-weight: bold;
+      border-left: 5px solid var(--primary);
+      box-shadow: var(--shadow);
+      border-radius: 8px;
+    }
+
+    /* Mobile menu */
+    @media (max-width: 768px) {
+      aside {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 20px;
+        position: relative;
+      }
+
+      .logo {
+        width: 80px;
+      }
+
+      nav {
+        flex-direction: row;
+        gap: 10px;
+      }
+
+      main {
+        margin-left: 0;
+        padding: 40px 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <aside>
+    <img src="logo.png" alt="Logo" class="logo" />
+    <nav>
+      <a href="index.html">Domů</a>
+      <a href="about.html">O hře</a>
+      <a href="development.html">Vývoj</a>
+      <a href="download.html">Ke stažení</a>
+      <a href="contact.html">Kontakt</a>
+      <a href="links.html">Odkazy</a>
+    </nav>
+  </aside>
+
+  <main>
+    <h1>Spolupráce</h1>
+
+    <div class="content">
+      <p>Chceš se zapojit do vývoje hry <strong>Dispatch Simulator: Czechia</strong> nebo nám pomoci s grafikou, testováním či marketingem? Napiš nám a staň se součástí našeho týmu!</p>
+
+      <p>Pro přihlášení se do týmu vyplň následující formulář, kde nám napíšeš, jak bys mohl/a přispět do projektu.</p>
+
+      <!-- Google Form Embed (nahraď kódem formuláře, který získáš z Google Forms) -->
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfD5yZC2yb3fGJ6elTwr9A0zjm9VJHvXtFwXZYcmh2ncs4EJw/viewform?embedded=true" width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">Načítám...</iframe>
+
+      <p class="highlight">Děkujeme za Tvůj zájem! Budeme Tě kontaktovat co nejdříve.</p>
+    </div>
+  </main>
+
+  <script>
+    // Toggle mobile menu visibility
+    const menuToggle = document.querySelector('.menu-toggle');
+    const aside = document.querySelector('aside');
+    const nav = document.querySelector('nav');
+
+    menuToggle.addEventListener('click', () => {
+      aside.classList.toggle('active');
+      nav.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
+
