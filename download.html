@@ -26,6 +26,7 @@
       color: var(--text);
       display: flex;
       min-height: 100vh;
+      position: relative;
     }
 
     /* Sidebar (menu) */
@@ -35,13 +36,13 @@
       min-height: 100vh;
       padding: 20px;
       position: fixed;
+      top: 0;
+      left: -240px; /* Initially hidden */
       display: flex;
       flex-direction: column;
       align-items: center;
       box-shadow: var(--shadow);
-      transition: left 0.3s ease;
-      top: 0;
-      left: -240px; /* Initially hidden */
+      transition: left 0.3s ease; /* Smooth animation */
     }
 
     .logo {
@@ -115,18 +116,24 @@
     /* Mobile menu */
     @media (max-width: 768px) {
       aside {
-        width: 100%;
-        height: auto;
-        left: -240px; /* Initially hidden */
+        width: 240px; /* Ensure width on mobile */
+        left: -240px; /* Initially hidden off screen */
       }
-
+      
       .logo {
         width: 80px;
       }
 
       nav {
+        display: flex;
         flex-direction: column;
         gap: 10px;
+        padding-top: 20px;
+      }
+
+      nav a {
+        font-size: 1.2em;
+        padding: 10px;
       }
 
       main {
@@ -138,6 +145,11 @@
         font-size: 2rem;
       }
 
+ p {
+        font-size: 1.1rem;
+      }
+
+      /* Hamburger icon */
       .menu-toggle {
         display: block;
         background-color: var(--primary);
