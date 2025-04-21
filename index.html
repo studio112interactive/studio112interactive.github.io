@@ -2,7 +2,7 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8" />
-  <title>Testuje se chyba</title>
+  <title>Dispatch Simulator: Czechia</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     :root {
@@ -28,7 +28,7 @@
       min-height: 100vh;
     }
 
-    /* Sidebar (menu) */
+    /* Sidebar (menu) for larger screens */
     aside {
       background-color: var(--primary);
       width: 240px;
@@ -69,7 +69,7 @@
       background-color: var(--accent);
     }
 
-    /* Main content */
+    /* Main content area */
     main {
       margin-left: 240px;
       padding: 60px 40px;
@@ -100,7 +100,7 @@
       color: #777;
     }
 
-    /* Mobile menu - hidden by default */
+    /* Mobile menu hidden by default */
     @media (max-width: 768px) {
       aside {
         width: 100%;
@@ -158,7 +158,7 @@
       }
 
       .menu-toggle.active + aside {
-        left: 0;  /* Show menu */
+        left: 0;  /* Menu slides in */
       }
 
       nav.active {
@@ -166,7 +166,7 @@
       }
     }
 
-    /* Hide navigation menu on mobile */
+    /* Hide navigation menu by default on mobile */
     nav {
       display: none;
     }
@@ -190,9 +190,9 @@
   </aside>
 
   <main>
-    <h1>Testuje se chyba</h1>
+    <h1>Dispatch Simulator: Czechia</h1>
     <p>
-      V tento moment web nefunguje z důvodu oprav
+      Realistická simulace práce dispečera tísňové linky 112. Ve hře se ujmeš řízení všech složek IZS v prostředí České republiky – od hasičů přes záchranku až po policii. Buduj stanice, nakupuj techniku, trénuj personál a reaguj na krizové situace v reálném čase s podporou AI.
     </p>
 
     <footer>
